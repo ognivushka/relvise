@@ -103,6 +103,10 @@ body {
   .header__menu {
     margin: 0px 0px 0px 80px;
   }
+
+  .header__conteiner {
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 767px) {
@@ -140,6 +144,70 @@ body {
 @media (max-width: 479px) {
   .menu_link {
     font-size: 18px;
+  }
+}
+/* ..............mob-navigation............................................... */
+.button-mob-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+  z-index: 1;
+}
+.icon-mob-nav {
+  height: 40px;
+  width: 40px;
+  color: #737373;
+}
+
+.icon-mob-nav[name="close-outline"] {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .button-mob-nav {
+    display: block;
+  }
+
+  .menu-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.918);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    transform: translate(100%);
+
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-open .menu-list {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  .menu_link {
+    font-size: 35px;
+    color: #4b4b4b;
+  }
+
+  .nav-open .icon-mob-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mob-nav[name="menu-outline"] {
+    display: none;
   }
 }
 
